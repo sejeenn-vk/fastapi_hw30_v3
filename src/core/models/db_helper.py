@@ -10,6 +10,10 @@ from sqlalchemy.ext.asyncio import (
 
 
 class DatabaseHelper:
+    """
+    Основные настройки связи с базой данных postgresql
+    engine и session
+    """
     def __init__(
             self,
             url: str,
