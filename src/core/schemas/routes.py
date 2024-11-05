@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 
 
 class MainPage(BaseModel):
@@ -11,3 +11,6 @@ class Recipe(BaseModel):
     cooking_time: int
     views: int | None
     recipe_description: str | None
+    model_config = ConfigDict(
+        from_attributes=True,
+    )
