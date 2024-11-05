@@ -6,4 +6,8 @@ class MainPage(BaseModel):
 
 
 class Recipe(BaseModel):
-    ...
+    id: int | None
+    recipe_name: str
+    cooking_time: int
+    views: int | None
+    recipe_description: str | None
