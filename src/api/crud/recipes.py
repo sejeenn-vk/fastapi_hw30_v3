@@ -1,12 +1,12 @@
 from typing import Sequence
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
-from core.models import Recipe
+from core.models.recipe import Recipe
 
 
-async def get_all_users(
+async def get_all_recipes(
         session: AsyncSession,
-) -> Sequence[User]:
-    stmt = select(User).order_by(User.id)
+) -> Sequence[Recipe]:
+    stmt = select(Recipe).order_by(Recipe.id)
     result = await session.scalars(stmt)
     return result.all()
