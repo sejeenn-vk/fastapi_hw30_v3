@@ -3,7 +3,7 @@ from typing import Annotated
 from fastapi import APIRouter, Depends
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from api import crud as recipe_crud
+from api.crud import recipes as recipe_crud
 from core.models import db_helper
 from core.schemas.routes import Recipe
 
