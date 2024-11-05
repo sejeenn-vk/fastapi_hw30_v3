@@ -5,6 +5,8 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from core.models import db_helper
 from core.schemas.routes import MainPage, Recipe
+from api.crud import recipes as crud
+
 router = APIRouter(tags=["Главная страница сайта"])
 
 
@@ -21,5 +23,5 @@ async def get_all_recipes(
 
     ],
 ):
-    recipes = await  
+    recipes = await crud.get_all_recipes(session=session)
     return recipes
